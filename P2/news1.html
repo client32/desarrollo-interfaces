@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BBC - Detalle de Noticia</title>
+</head>
+<body class="news-detail-page">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo de la BBC">
+    </div>
+
+    <header>
+        <button class="search-button" onclick="toggleBuscar()">🔍︎ Buscar</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="nav-menu" id="navMenu">
+            <button class="close-menu" onclick="toggleMenu()">X</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Culture</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <div class="search-popup" id="searchPopup">
+        <input type="text" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+        <button class="close-button" onclick="toggleBuscar()">X</button>
+    </div>
+
+    <main>
+        <article class="news-detail">
+            <h1>Bruce Springsteen to join Harris in Georgia as Trump heads to Las Vegas</h1>
+            <img src="img/noticia1.webp" alt="Bruce Springsteen y Kamala Harris" class="featured-image">
+            <p>El famoso músico Bruce Springsteen se unirá a la Vicepresidenta Kamala Harris en un evento en Georgia, mientras el ex presidente Donald Trump se dirige a Las Vegas. Este evento es parte de la creciente tensión en las próximas elecciones, donde ambos líderes han intercambiado palabras ásperas.</p>
+            <p>El evento de Harris busca movilizar a los votantes en un estado clave que podría determinar el resultado de la elección. Springsteen, conocido por su música y activismo político, está alineado con los esfuerzos de Harris para fortalecer el apoyo entre los votantes jóvenes y progresistas.</p>
+            <h2>Contexto</h2>
+            <p>Georgia ha sido un campo de batalla en las últimas elecciones, con ambos partidos luchando por asegurar la victoria. La participación de Springsteen puede atraer a un público más amplio, destacando temas como la justicia social y la igualdad.</p>
+            <h2>Reacciones</h2>
+            <p>Los analistas políticos han señalado que la alianza de Harris con figuras influyentes como Springsteen podría ser crucial. “Necesitan energizar a la base”, comentó un experto en campañas. Por otro lado, los seguidores de Trump han intensificado sus críticas hacia Harris y su agenda.</p>
+            <h2>Próximos Pasos</h2>
+            <p>A medida que se acercan las elecciones, tanto Harris como Trump continuarán intensificando sus campañas. Las siguientes semanas son críticas y los eventos en estados clave, como Georgia, serán seguidos de cerca.</p>
+            <a href="#" class="back-link" onclick="window.history.back()">← Volver a Noticias</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BBC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function buscar() {
+            const query = document.querySelector('.buscar-popup input').value;
+            alert(`Buscando: ${query}`);
+            toggleBuscar(); // Cerrar el popup después de buscar
+        }
+
+        function toggleBuscar() {
+            const popup = document.getElementById('searchPopup');
+            popup.classList.toggle('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!--
+1. Ejercicio: Disposición de una Barra de Navegación (Flexbox)
+Situación: Tienes una barra de navegación con cuatro elementos (Home, About, Services, Contact). Quieres que se alineen en una fila horizontal y estén centrados, tanto vertical como horizontalmente, dentro de la barra de navegación.
+
+Requerimientos:
+Los elementos deben estar alineados horizontalmente.
+Espaciado uniforme entre los elementos.
+La barra debe adaptarse en pantallas pequeñas sin romperse.
+
+
+2. Ejercicio: Crear una Galería de Imágenes (Grid)
+Situación: Debes crear una galería de imágenes con cuatro imágenes que se adapten a diferentes tamaños de pantalla. Quieres que las imágenes se dispongan en un formato de 2 columnas en pantallas medianas y en una sola columna en pantallas pequeñas. En pantallas grandes, deberían aparecer en una cuadrícula de 2 filas y 2 columnas.
+
+Requerimientos:
+Diseño de cuadrícula en pantallas grandes (2x2).
+Diseño de 2 columnas en pantallas medianas.
+Diseño de 1 columna en pantallas pequeñas.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio flex y grid</title>
+    
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /*hace que el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suman posteriormente*/
+        }
+
+        /* Estilos para la barra de navegación */
+        .navbarra {
+            display: flex;
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center;     /* Centrar verticalmente */
+            background-color: #313131;
+            padding: 10px;
+        }
+
+        .navbarra a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px; /* Espaciado uniforme entre los elementos */
+            font-size: 18px;
+        }
+
+        /* Responsivo: Flexbox en pantallas pequeñas */
+        @media (max-width: 600px) {
+            .navbarra {
+                flex-direction: column; /* Los elementos se apilan verticalmente en pantallas pequeñas */
+            }
+
+            .navbarra a {
+                margin: 5px 0; /* Ajustar espaciado en pantallas pequeñas */
+                font-size: 18px;
+            }
+        }
+
+        /* Estilos para la galería de imágenes */
+        .galeria {
+            display: grid;
+            gap: 10px; /*especifica el tamaño de las canaletas, que es el espacio entre filas y columnas*/
+            padding: 5px;
+            justify-items: center;
+            padding-top: 20px;
+        }
+
+        /* Pantallas pequeñas: 1 columna */
+        .galeria {
+            grid-template-columns: 1fr; /*Definimos el tamaño y la proporción de las pistas de cuadrícula*/
+        }
+        .nav-menu{
+                font-size: 7px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+        }
+
+        /* Pantallas medianas: 2 columnas */
+        @media (min-width: 600px) {
+            .galeria {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+        }
+
+        /* Pantallas grandes: Cuadrícula 2x2 */
+        @media (min-width: 1024px) {
+            .galeria {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }
+
+        .galeria img {
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0);
+        }
+        .logo img{
+            width: 100px;
+            height: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbarra">
+        <div class="logo">
+            <img src="https://www.google.com/logos/2024/popcorn/rc3/cta.png" alt="logo">
+        </div>
+        <div class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <div class="galeria">
+        <img src="https://i.pinimg.com/474x/5d/f6/68/5df6681e012ae24824934be4bfd1b8ec.jpg" alt="Imagen 1">
+        <img src="https://i.pinimg.com/474x/78/68/95/7868954692ba22db3ca68f20ca903b82.jpg" alt="Imagen 2">
+        <img src="https://i.pinimg.com/474x/4d/5a/a5/4d5aa5e91a92a188030b57382f2f3a07.jpg" alt="Imagen 3">
+        <img src="https://i.pinimg.com/474x/98/61/70/986170edc385c922353ac95f02995ed3.jpg" alt="Imagen 4">
+    </div>
+</body>
+</html>

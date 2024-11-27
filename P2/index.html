@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BBC - Noticias y más</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo de la BBC">
+    </div>
+
+    <header>
+        <button class="search-button" onclick="toggleBuscar()">🔍︎ Buscar</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="nav-menu" id="navMenu">
+            <button class="close-menu" onclick="toggleMenu()">X</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Culture</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <div class="search-popup" id="searchPopup">
+        <input type="text" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+        <button class="close-button" onclick="toggleBuscar()">X</button>
+    </div>
+    
+    <main>
+        <section class="news-grid">
+            <article class="news-item">
+                <a href="news1.html">
+                    <img src="img/noticia1.webp" alt="Noticia 1">
+                    <h2>Bruce Springsteen to join Harris in Georgia as Trump heads to Las Vegas</h2>
+                    <p>Trump and Harris have been trading insults as focus remains on the key battleground states.</p>
+                </a>
+            </article>
+            <article class="news-item">
+                <a href="news2.html">
+                    <img src="img/noticia2.webp" alt="Noticia 2">
+                    <h2>Commonwealth leaders to defy UK on slavery reparations</h2>
+                    <p>Prime Minister Sir Keir Starmer said this week he wants to discuss current challenges with Commonwealth leaders, especially climate change, rather than the past</p>
+                </a>
+            </article>
+            <article class="news-item">
+                <a href="news3.html">
+                    <img src="img/noticia3.webp" alt="Noticia 3">
+                    <h2>Foreign-born voters: 'The money in US politics absolutely scares me'</h2>
+                    <p>Millions of people migrate to the United States every year, and the number of those who become US citizens - and therefore earn the right to vote - is growing.</p>
+                </a>
+            </article>
+            <article class="news-item">
+                <a href="#">
+                    <img src="img/noticia4.webp" alt="Noticia 4">
+                    <h2>Henry Zeffman: How a LinkedIn post sparked a transatlantic row</h2>
+                    <p>LinkedIn: the social network for CVs, apparently motivational corporate messages and - as of late last night - transatlantic diplomatic spats.</p>
+                </a>
+            </article>
+            <article class="news-item">
+                <a href="#">
+                    <img src="img/noticia5.webp" alt="Noticia 5">
+                    <h2>Four takeaways from Kamala Harris's NBC interview</h2>
+                    <p>Vice-President Kamala Harris and her team are prepared if her opponent, Donald Trump, declares victory in the presidential election before all ballots are counted, she told NBC News.</p>
+                </a>
+            </article>
+            <article class="news-item">
+                <a href="#">
+                    <img src="img/noticia6.webp" alt="Noticia 6">
+                    <h2>India evacuating more than a million people as Cyclone Dana nears</h2>
+                    <p>Authorities in India are evacuating nearly 1.5 million people from the path of an approaching cyclone in the eastern states of Odisha (formerly Orissa) and West Bengal.</p>
+                </a>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 BBC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function buscar() {
+            const query = document.querySelector('.buscar-popup input').value;
+            alert(`Buscando: ${query}`);
+            toggleBuscar(); // Cerrar el popup después de buscar
+        }
+
+        function toggleBuscar() {
+            const popup = document.getElementById('searchPopup');
+            popup.classList.toggle('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BBC - Detalle de Noticia: Reparaciones por la Esclavitud</title>
+</head>
+<body class="news-detail-page">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo de la BBC">
+    </div>
+
+    <header>
+        <button class="search-button" onclick="toggleBuscar()">🔍︎ Buscar</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="nav-menu" id="navMenu">
+            <button class="close-menu" onclick="toggleMenu()">X</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Culture</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-popup" id="searchPopup">
+        <input type="text" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+        <button class="close-button" onclick="toggleBuscar()">X</button>
+    </div>
+
+    <main>
+        <article class="news-detail">
+            <h1>Los líderes de la Commonwealth desafían al Reino Unido sobre las reparaciones por la esclavitud</h1>
+            <img src="img/noticia2.webp" alt="Reunión de la Commonwealth" class="featured-image">
+            <p>Los líderes de la Commonwealth se han reunido para discutir el tema de las reparaciones por la esclavitud, desafiando al primer ministro del Reino Unido, Sir Keir Starmer, quien ha manifestado su intención de centrarse en los desafíos actuales, como el cambio climático.</p>
+            <p>Durante la cumbre, varios líderes expresaron su deseo de abordar el pasado colonial y su impacto en las naciones que forman parte de la Commonwealth. La discusión sobre las reparaciones ha sido un tema candente, con opiniones divididas sobre cómo proceder.</p>
+            <h2>Contexto</h2>
+            <p>Las reparaciones por la esclavitud se han convertido en un punto focal en los debates sobre justicia social y equidad. Muchos países de la Commonwealth, que en su mayoría fueron colonias británicas, argumentan que tienen derecho a recibir compensaciones por los efectos duraderos del colonialismo y la esclavitud.</p>
+            <h2>Reacciones</h2>
+            <p>Sir Keir Starmer ha defendido su enfoque, argumentando que el futuro y el bienestar de las naciones deben ser la prioridad. Sin embargo, varios líderes de la Commonwealth han criticado esta postura, exigiendo una revisión de los crímenes del pasado y una compensación adecuada.</p>
+            <h2>Próximos Pasos</h2>
+            <p>Las conversaciones sobre reparaciones probablemente continuarán en futuros encuentros. Las tensiones entre el Reino Unido y los países de la Commonwealth podrían aumentar si no se llega a un consenso sobre este importante tema.</p>
+            <a href="#" class="back-link" onclick="window.history.back()">← Volver a Noticias</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BBC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function buscar() {
+            const query = document.querySelector('.buscar-popup input').value;
+            alert(`Buscando: ${query}`);
+            toggleBuscar(); // Cerrar el popup después de buscar
+        }
+
+        function toggleBuscar() {
+            const popup = document.getElementById('searchPopup');
+            popup.classList.toggle('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

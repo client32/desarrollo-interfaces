@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>BBC - Detalle de Noticia: Votantes Nacidos en el Extranjero</title>
+</head>
+<body class="news-detail-page">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo de la BBC">
+    </div>
+
+    <header>
+        <button class="search-button" onclick="toggleBuscar()">🔍︎ Buscar</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="nav-menu" id="navMenu">
+            <button class="close-menu" onclick="toggleMenu()">X</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Culture</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-popup" id="searchPopup">
+        <input type="text" placeholder="Buscar...">
+        <button onclick="buscar()">Buscar</button>
+        <button class="close-button" onclick="toggleBuscar()">X</button>
+    </div>
+
+    <main>
+        <article class="news-detail">
+            <h1>Los votantes nacidos en el extranjero: 'El dinero en la política de EE. UU. me asusta profundamente'</h1>
+            <img src="img/noticia3.webp" alt="Votantes en EE. UU." class="featured-image">
+            <p>Con millones de personas que migran a los Estados Unidos cada año, la población de votantes nacidos en el extranjero está creciendo rápidamente. Este grupo se ha convertido en un actor importante en la política estadounidense, especialmente en un momento en que las elecciones se vuelven más competitivas.</p>
+            <p>Sin embargo, muchos de estos votantes expresan preocupaciones sobre el papel del dinero en la política. Una reciente encuesta mostró que un número significativo de votantes nacidos en el extranjero se siente abrumado por la influencia del financiamiento privado en las elecciones y su capacidad para determinar el resultado.</p>
+            <h2>Contexto</h2>
+            <p>A medida que más inmigrantes obtienen la ciudadanía y el derecho a votar, la dinámica electoral en EE. UU. está cambiando. Los votantes nacidos en el extranjero tienden a tener opiniones y prioridades diferentes en comparación con aquellos que han nacido en el país, lo que puede influir en los resultados de las elecciones.</p>
+            <h2>Reacciones</h2>
+            <p>Activistas y analistas políticos están prestando atención a este grupo, ya que representa una porción creciente del electorado. “Es vital escuchar sus preocupaciones y entender sus perspectivas”, dice un experto en política migratoria.</p>
+            <h2>Próximos Pasos</h2>
+            <p>Con las elecciones presidenciales a la vista, los candidatos y partidos políticos están comenzando a enfocar sus estrategias para captar la atención de los votantes nacidos en el extranjero. Se anticipa que este grupo tendrá un impacto significativo en las próximas elecciones.</p>
+            <a href="#" class="back-link" onclick="window.history.back()">← Volver a Noticias</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BBC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function buscar() {
+            const query = document.querySelector('.buscar-popup input').value;
+            alert(`Buscando: ${query}`);
+            toggleBuscar(); // Cerrar el popup después de buscar
+        }
+
+        function toggleBuscar() {
+            const popup = document.getElementById('searchPopup');
+            popup.classList.toggle('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

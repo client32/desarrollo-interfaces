@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Landing Page con Tailwind CSS</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Configuración de Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0D3B66', // Color principal
+            secondary: '#FAF0CA', // Color secundario
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+  <!-- Encabezado -->
+  <header class="bg-silver py-6 shadow-sm">
+    <nav class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary">Mi Portafolio</a>
+      <ul class="flex space-x-6 text-sm text-gray-600">
+        <li><a href="#proyectos" class="hover:text-primary transition">Prácticas</a></li>
+        <li><a href="#contacto" class="hover:text-primary transition">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de Héroe -->
+  <section class="bg-white text-center py-24 px-6">
+    <h1 class="text-4xl font-bold text-primary">Desarrollo de Interfaces</h1>
+    <p class="text-lg text-gray-600 mt-4">Aquí podrás ver las prácticas realizadas.</p>
+  </section>
+
+  <!-- Sección de Proyectos Realizados -->
+  <section id="proyectos" class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold text-primary text-center mb-12">Prácticas Realizados</h2>
+    
+    <!-- Contenedor de las tarjetas de proyectos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+
+      <!-- Tarjeta 1 -->
+      <a href="P1/index.html" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-md transition duration-300">
+        <div class="w-full h-48 bg-gray-100 flex justify-center items-center">
+          <!-- SVG de código -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4v16m-8-8h16"></path>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-primary">Práctica 1</h3>
+          <p class="text-gray-600 mt-4">Grid y Flex.</p>
+        </div>
+      </a>
+
+      <!-- Tarjeta 2 -->
+      <a href="P2/index.html" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-md transition duration-300">
+        <div class="w-full h-48 bg-gray-100 flex justify-center items-center">
+          <!-- SVG de diseño -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9V4H3v16h9v-8l4 4-4 4v-8z"></path>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-primary">Práctica 2</h3>
+          <p class="text-gray-600 mt-4">BBC noticias</p>
+        </div>
+      </a>
+
+      <!-- Tarjeta 3 -->
+      <a href="P3/index.html" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-md transition duration-300">
+        <div class="w-full h-48 bg-gray-100 flex justify-center items-center">
+          <!-- SVG de tecnología -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16h9m-9 0h-9m12-6h-9m-3 0h-3m3 4h-3m3-4h-3"></path>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-primary">Práctica 3</h3>
+          <p class="text-gray-600 mt-4">Null</p>
+        </div>
+      </a>
+
+      <!-- Tarjeta 4 -->
+      <a href="P4/index.html" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-md transition duration-300">
+        <div class="w-full h-48 bg-gray-100 flex justify-center items-center">
+          <!-- SVG de desarrollo -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l-6-6 6-6m0 12l6-6-6-6"></path>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-primary">Práctica 4</h3>
+          <p class="text-gray-600 mt-4">Web de noticias que consuma el contenido de una API utilizando Fetch API.</p>
+        </div>
+      </a>
+
+      <!-- Tarjeta 5 -->
+      <a href="PROYECTO/index.html" class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-md transition duration-300">
+        <div class="w-full h-48 bg-gray-100 flex justify-center items-center">
+          <!-- SVG de código -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4v16m-8-8h16"></path>
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-primary">Proyecto Final</h3>
+          <p class="text-gray-600 mt-4">Ecommerce de productos de TV</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Llamado a la Acción -->
+  <section class="bg-white py-16 text-center">
+    <h2 class="text-3xl font-bold text-primary">¿Te gustaría saber más?</h2>
+    <p class="text-lg text-gray-600 mt-4">Visita mis proyectos o contacta conmigo para más información.</p>
+    <a href="#contacto" class="mt-8 inline-block bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition">Contactarme</a>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer class="bg-gray-100 py-8 text-center text-gray-600">
+    <p>&copy; 2024 Mi Portafolio. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

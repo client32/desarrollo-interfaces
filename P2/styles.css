@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header {
+    background-color: #333333; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background-color: #333333;
+    z-index: 1000;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(-20px); /* Moverlo un poco hacia arriba */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.nav-menu.active {
+    display: flex; /* Mostrar el menú al activarse */
+    opacity: 0.9; /* Hacerlo visible */
+    transform: translateY(0); /* Regresar a su posición original */
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px;
+    margin-top: 0;
+}
+
+nav ul li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.search-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000c4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.search-popup.active {
+    display: block;
+}
+
+.search-popup input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.search-popup button {
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-popup button:hover {
+    background-color: #333333;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.news-item {
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/*Estilo para las internas*/
+
+.news-detail-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.news-detail-page .nav-menu {
+    display: none;
+}
+
+.news-detail-page .nav-menu.active {
+    display: block;
+}
+
+.news-detail-page .news-detail {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-detail-page .news-detail h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-detail-page .featured-image {
+    width: 100%;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.news-detail-page .news-detail h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #444;
+}
+
+.news-detail-page .news-detail p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.news-detail-page .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0072bb;
+    text-decoration: none;
+}
+
+.news-detail-page .back-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* Media Queries para hacer la página responsive */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-popup input {
+        width: 100%; /* Hacer el campo de búsqueda más ancho en pantallas pequeñas */
+    }
+}

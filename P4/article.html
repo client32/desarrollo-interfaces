@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Artículo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Detalle del Artículo</h1>
+    <a href="index.html">Volver a la página principal</a>
+  </header>
+
+  <main>
+    <div class="article-detail">
+      <h2 id="title"></h2>
+      <p><strong>Autor:</strong> <span id="author"></span></p>
+      <p id="content"></p>
+    </div>
+  </main>
+
+  <script>
+    async function loadArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id');
+      if (!articleId) return;
+
+      try {
+        const response = await fetch(`https://news-foniuhqsba-uc.a.run.app/${articleId}`);
+        if (!response.ok) throw new Error('Error al obtener el artículo');
+
+        const article = await response.json();
+        document.getElementById('title').innerHTML = article.headline;
+        document.getElementById('author').innerHTML = article.author;
+        document.getElementById('content').innerHTML = article.body;
+      } catch (error) {
+        console.error('Error:', error);
+        document.querySelector('main').innerHTML = `<p>Error al cargar el artículo.</p>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticle);
+  </script>
+</body>
+</html>
